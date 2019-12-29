@@ -1,0 +1,49 @@
+:root {
+    --scale: 60px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Cambria;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+body {
+    background-color: white;
+}
+
+.calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(5, var(--scale));
+    grid-template-rows: repeat(5, var(--scale));
+    grid-gap: 4px;
+    background-color: grey;
+    padding: 4px;
+    width: max-content;
+}
+
+.screen {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: right;
+}
+
+.horizontal-span-5 {
+    grid-column: span 5;
+}
+
+.horizontal-span-2 {
+    grid-column: span 2;
+}
+
+.vertical-span-2 {
+    grid-row: span 2;
+}
+
+.btn {
+    border-radius: 5px;
+}

@@ -1,16 +1,16 @@
+import axios from 'axios'
 
-import { pi } from 'mathjs'
-import { of } from 'rxjs'
+function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms))
+}
 
-console.log("hello world");
+async function asyncFunc() {
+    // fetch data from a url endpoint
+    await sleep(100)
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
 
-const source = of(1, 2, 3, 4, 5);
+    const data = JSON.stringify(response.data)
+    return data
+}
 
-const elt: HTMLElement = document.querySelector('toto')
-elt.innerHTML = (pi + 1).toString();
-
-elt.addEventListener("click", () => {
-    alert('rrr')
-    const subscribe = source.subscribe(val => console.log(val));
-})
-
+asyncFunc().then(t => console.log(t))
